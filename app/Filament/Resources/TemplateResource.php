@@ -6,12 +6,15 @@ use App\Filament\Resources\TemplateResource\Pages;
 use App\Filament\Resources\TemplateResource\RelationManagers;
 use App\Models\Template;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use InfinityXTech\FilamentUnlayer\Forms\Components\Unlayer;
 
 class TemplateResource extends Resource
 {
@@ -23,7 +26,9 @@ class TemplateResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('title'),
+                TextInput::make('description'),
+                Unlayer::make('content')->required(),
             ]);
     }
 
@@ -31,7 +36,8 @@ class TemplateResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title'),
+                TextColumn::make('description'),
             ])
             ->filters([
                 //
