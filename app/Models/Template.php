@@ -15,7 +15,7 @@ class Template extends Model
         'content'
     ];
 
-    // protected $casts = [
-    //     'content' => 'array'
-    // ];
+    protected $casts = [
+        'content' => 'array'
+    ];
 }
