@@ -9,13 +9,13 @@ class Template extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 
+    protected $fillable = [
         'title',
         'description',
-        'content'
+        'content',
     ];
 
     protected $casts = [
-        'content' => 'array'
+        'content' => 'array',
     ];
 }
